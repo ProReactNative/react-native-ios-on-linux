@@ -16,7 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    NSDictionary *appDefaults = @{
+  NSDictionary *appDefaults = @{
         @"host_preference": @"localhost",
         @"port_preference": @"8081",
   };
