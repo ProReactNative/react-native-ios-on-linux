@@ -46,7 +46,8 @@
   NSLog(@"host: %@", host);
   NSLog(@"port: %@", port);
 
-  jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+  NSString * urlString = [NSString stringWithFormat: @"http://%@:%@/index.ios.bundle?platform=ios&dev=true", host, port];
+  jsCodeLocation = [NSURL URLWithString: urlString];
 
   /**
    * OPTION 2
