@@ -15,6 +15,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    NSDictionary *appDefaults = @{
+        @"host_preference": @"localhost",
+        @"port_preference": @"8081",
+  };
+  [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+
+
+
   NSURL *jsCodeLocation;
 
   /**
@@ -30,6 +39,12 @@
    * `inet` value under `en0:`) and make sure your computer and iOS device are
    * on the same Wi-Fi network.
    */
+
+  NSString *host = [[NSUserDefaults standardUserDefaults] stringForKey: @"host_preference"];
+  NSString *port = [[NSUserDefaults standardUserDefaults] stringForKey: @"port_preference"];
+
+  NSLog(@"host: %@", host);
+  NSLog(@"port: %@", port);
 
   jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
 
